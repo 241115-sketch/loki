@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L.O.K.I — Logical Operational Kinetic Intelligence</title>
+    <style>
+        :root {
+            --primary: #00d4ff;
+            --secondary: #007a99;
+            --bg: #000f08;
+            --panel: #010c10;
+            --text: #8ffcff;
+            --accent: #ff6600;
+            --loki-green: #00ff88;
+            --loki-gold: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 50%, #001520 0%, #000000 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hud-circle {
+            width: 300px;
+            height: 300px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            position: relative;
+            margin-bottom: 2rem;
+            animation: rotate 20s linear infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hud-circle::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            border: 1px dashed var(--loki-green);
+            border-radius: 50%;
+            animation: rotate-reverse 10s linear infinite;
+        }
+
+        .hud-inner {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--loki-gold);
+            text-shadow: 0 0 20px var(--loki-gold);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotate-reverse {
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        h1 {
+            font-size: 4rem;
+            letter-spacing: 10px;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: 1px solid var(--primary);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--bg);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary);
+            box-shadow: 0 0 30px var(--primary);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--loki-green);
+            border-color: var(--loki-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--loki-green);
+            color: var(--bg);
+            box-shadow: 0 0 30px var(--loki-green);
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--loki-gold);
+            border-bottom: 1px solid var(--secondary);
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--panel);
+            padding: 2rem;
+            border: 1px solid var(--secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            border-top: 1px solid var(--secondary);
+            color: var(--secondary);
+            font-size: 0.8rem;
+        }
+
+        .status-bar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: var(--panel);
+            padding: 5px 20px;
+            font-size: 0.7rem;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--secondary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="hud-circle">
+            <div class="hud-inner">LOKI</div>
+        </div>
+        <h1>REY XXXVII</h1>
+        <p class="subtitle">Logical Operational Kinetic Intelligence</p>
+        <div class="cta-buttons">
+            <a href="LOKI_Executable.zip" class="btn btn-primary">Download Executable</a>
+            <a href="https://github.com" class="btn btn-secondary">View Source Code</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="features">
+            <h2>SYSTEM CAPABILITIES</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🎤 LIVE VOICE</h3>
+                    <p>Real-time bidirectional voice conversation powered by Gemini Live API.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🖥️ OS CONTROL</h3>
+                    <p>Direct control over system settings, volume, brightness, and applications.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌐 WEB AGENT</h3>
+                    <p>Automated browsing, searching, and form filling via Playwright.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🧠 LONG-TERM MEMORY</h3>
+                    <p>Remembers your name, preferences, and personal facts for a truly tailored experience.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>👁️ VISION MODULE</h3>
+                    <p>Analyzes your screen or webcam in real-time to answer complex visual questions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💻 CODE HELPER</h3>
+                    <p>Writes, runs, and debugs code across multiple programming languages.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>L.O.K.I — BUILT BY KRISHNA RANA</p>
+        <p>CLASSIFIED · REY INDUSTRIES · 2026</p>
+    </footer>
+
+    <div class="status-bar">
+        <span>STATUS: SYSTEM DEPLOYED</span>
+        <span>VERSION: 337.37.0</span>
+        <span>ENCRYPTION: ACTIVE</span>
+    </div>
+
+</body>
+
+</html>

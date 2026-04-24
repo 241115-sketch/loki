@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.spec
+*.egg-info/
+*.egg
+
+# Virtual environments
+venv/
+.env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# PyInstaller
+*.manifest
+
+# Config (contains API keys - DO NOT COMMIT)
+config/api_keys.json
+config/users.json
+
+# Memory
+memory/long_term.json
+
+# OS
+Thumbs.db
+.DS_Store
